@@ -1,0 +1,26 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+             xmlns:vm="clr-namespace:Galatasaray.ViewModels"
+             x:Class="Galatasaray.Views.SensorsPage">
+
+    <ContentPage.BindingContext>
+        <vm:SensorViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="20">
+            <Label Text="Acelerómetro" FontAttributes="Bold" HorizontalOptions="Center" />
+            <lvc:CartesianChart Series="{Binding AccelSeries}" HeightRequest="200"/>
+
+            <Label Text="Giroscopio" FontAttributes="Bold" HorizontalOptions="Center" />
+            <lvc:CartesianChart Series="{Binding GyroSeries}" HeightRequest="200"/>
+
+            <Label Text="Barómetro" FontAttributes="Bold" HorizontalOptions="Center" />
+            <lvc:CartesianChart Series="{Binding BarometerSeries}" HeightRequest="200"/>
+
+            <Label Text="Brújula" FontAttributes="Bold" HorizontalOptions="Center" />
+            <lvc:PieChart Series="{Binding CompassSeries}" HeightRequest="200"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
